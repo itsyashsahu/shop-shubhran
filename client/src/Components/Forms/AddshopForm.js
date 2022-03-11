@@ -15,11 +15,11 @@ const AddshopForm = props => {
 
         axios({
             method: "post",
-            url: "http://localhost:5000/api/shop/addShop",
+            url: "api/shop/addShop",
             data: values,
         }).then(() => console.log("Shop-added")).catch(() => console.log("Error occured in sign-up"))
 
-        axios.get("http://localhost:5000/api/shop/getShop").then(
+        axios.get("api/shop/getShop").then(
             (response) => {
                 console.log(response)
                 props.stateAccess(response.data)

@@ -24,7 +24,7 @@ const LoginForm = () => {
 
         axios({
             method: "post",
-            url: "http://localhost:5000/api/user/login",
+            url: "api/user/login",
             data: values,
         }).then((res) => {
 

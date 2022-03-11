@@ -21,7 +21,7 @@ const SignupForm = () => {
 
         axios({
             method: "post",
-            url: "http://localhost:5000/api/user/addUser",
+            url: "api/user/addUser",
             data: values,
         }).then((res) => {
 
