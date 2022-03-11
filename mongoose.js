@@ -5,8 +5,10 @@ const { findById } = require('./models/Shop-model');
 const Shop = require('./models/Shop-model')
 const User = require('./models/User-model')
 
+const connString = "mongodb+srv://shubhrant:luucent0@cluster0.feny1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const connString1 ='mongodb://localhost:27017/shop_aisle?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
 mongoose.connect(
-  'mongodb://localhost:27017/shop_aisle?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false'
+ connString
 ).then(() => {
   console.log('Connected to database!')
 }).catch(() => {
