@@ -18,24 +18,39 @@ const SignupForm = () => {
         passBtn ? setPassBtn(false) : setPassBtn(true)
     }
     const submitHandler = (values, action) => {
-
-        axios({
-            method: "post",
-            url: "api/user/addUser",
-            data: values,
-        }).then((res) => {
+         axios
+        .post("api/user/login", values)
+        .then((res) => {
 
             if (res.status === 200) {
                 navigate('/login')
                 navigate('/dashboard')
             }
 
-        }).catch(() => {
+        })
+        .catch(() => {
             console.log("Error occured in sign-up")
             alert("We found user with same E-mail ID. Please login to continue")
             //   document.getElementById('reset').click() 
             navigate('/login')
         })
+        // axios({
+        //     method: "post",
+        //     url: "api/user/addUser",
+        //     data: values,
+        // }).then((res) => {
+
+        //     if (res.status === 200) {
+        //         navigate('/login')
+        //         navigate('/dashboard')
+        //     }
+
+        // }).catch(() => {
+        //     console.log("Error occured in sign-up")
+        //     alert("We found user with same E-mail ID. Please login to continue")
+        //     //   document.getElementById('reset').click() 
+        //     navigate('/login')
+        // })
 
 
     }

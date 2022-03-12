@@ -21,12 +21,9 @@ const LoginForm = () => {
         passBtn ? setPassBtn(false) : setPassBtn(true)
     }
     const submitHandler = (values, action) => {
-
-        axios({
-            method: "post",
-            url: "api/user/login",
-            data: values,
-        }).then((res) => {
+        axios
+        .post("api/user/login", values)
+        .then((res) => {
 
             if (res.status === 200) {
                 console.log(res)
@@ -39,9 +36,30 @@ const LoginForm = () => {
                 alert("Entered email or password is wrong")
 
             }
-        }).catch((res) => {
+        })
+        .catch((res) => {
             console.log(res)
         })
+        // axios({
+        //     method: "post",
+        //     url: "api/user/login",
+        //     data: values,
+        // }).then((res) => {
+
+        //     if (res.status === 200) {
+        //         console.log(res)
+        //         navigate('/dashboard')
+        //         localStorage.setItem('userEmail', values.email)
+        //         setIsLogin(true)
+        //     }
+        //     else {
+        //         console.log("error")
+        //         alert("Entered email or password is wrong")
+
+        //     }
+        // }).catch((res) => {
+        //     console.log(res)
+        // })
 
 
     }

@@ -13,11 +13,10 @@ const AddshopForm = props => {
     const navigate = useNavigate()
     const submitHandler = (values, action) => {
 
-        axios({
-            method: "post",
-            url: "api/shop/addShop",
-            data: values,
-        }).then(() => console.log("Shop-added")).catch(() => console.log("Error occured in sign-up"))
+        axios
+        .post("api/shop/addShop", values)
+        .then(() => console.log("Shop-added SuccesFully"))
+        .catch(() => console.log("Error occured in Adding a Shop "))
 
         axios.get("api/shop/getShop").then(
             (response) => {

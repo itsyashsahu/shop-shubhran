@@ -12,11 +12,10 @@ const EditshopForm = ({ id, stateAccess, onHide, name, category, closing, area, 
     const navigate = useNavigate()
     const submitHandler = (values, action) => {
 
-        axios({
-            method: "put",
-            url: `api/shop/editShop/${id}`,
-            data: values,
-        }).then(() => console.log("Shop-edited")).catch(() => console.log("Error occured in editing shop"))
+        axios
+        .put(`api/shop/editShop/${id}`, values)
+        .then(() => console.log("Shop-edited SuccesFully"))
+        .catch(() => console.log("Error occured in editing a Shop "))
         window.location.reload()
         navigate('/dashboard')
 
