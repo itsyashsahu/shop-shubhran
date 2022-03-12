@@ -19,7 +19,7 @@ const SignupForm = () => {
     }
     const submitHandler = (values, action) => {
          axios
-        .post("api/user/login", values)
+        .post("api/user/signup", values)
         .then((res) => {
 
             if (res.status === 200) {
